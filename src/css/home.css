@@ -105,17 +105,6 @@ body{
     height: auto;
 }
 
-.btn-copy{
-    background: #5f023171;
-    color: black;
-    border: none;
-    padding: 5px;
-    width: 100%;
-    margin-top: 10px;
-}
-
-
-
 input[type=checkbox]{
 	height: 0;
 	width: 0;

@@ -22,3 +22,8 @@
 
     }
 </script>
+<style scoped>
+  p{
+    padding-bottom: 10px;
+  }
+</style>

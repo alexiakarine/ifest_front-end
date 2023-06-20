@@ -40,7 +40,6 @@
 <script>
 import '@/css/home.css';
 import axios from "axios";
-import Clipboard from 'clipboard';
 import MensagemComponent from '../components/chat/MensagemComponent.vue';
 
 export default {
@@ -63,11 +62,6 @@ export default {
     }    
   }, 
   mounted() {
-  new Clipboard('.btn-copy', {
-    text: function() {
-      return 'sua_chave_pix'
-    }
-    }),
    alert("Para iniciar ou interromper o recebimento de e-mails com novidades clique no sininho.")
   },
   methods:{
@@ -92,15 +86,6 @@ export default {
     ativaNotificacao(){
       document.querySelector(".email").style.display = "block" 
     },  
-   copyKey(mensagem) {
-    new Clipboard('.btn-copy', {
-      text: function() {
-        return mensagem.pix.copia_cola
-      }
-    }).on('success', function() {
-      alert('Chave PIX copiada para a área de transferência')
-    })
-    },
     enviar(){
       this.mensagens.push({
           componentes: [{

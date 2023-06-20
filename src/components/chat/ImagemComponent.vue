@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="valor">
+        <img :src="valor" style="width:100%; height: auto;"> 
         <p>
             {{ legenda }}
         </p>
@@ -23,3 +23,12 @@
 
     }
 </script>
+
+<style scoped>
+  p{
+    padding-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+  }
+</style>
