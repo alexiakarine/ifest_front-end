@@ -1,14 +1,13 @@
 <template>
     <div>
         <img style=" width: 100%;" :src="`data:image/png;base64, ${valor}`">
-        <button class=".btn-copy">Copiar pix</button>
+        <textarea v-model="copia_cola" rows=1 ref="linda"></textarea>
+        <button @click="copiar" class="btn-copy">Copiar pix</button>
 
     </div>
 </template>
 
 <script>
-import Clipboard from 'clipboard';
-
     export default{
         name: "PixComponent", 
         props: {
@@ -22,22 +21,12 @@ import Clipboard from 'clipboard';
             }
         },
         mounted() {
-            new Clipboard('.btn-copy', {
-                text: function() {
-                return this.copia_cola
-                }
-                })
         },
         methods:{
             copiar(){
-                new Clipboard('.btn-copy', {
-                    text: function() {
-                        return this.copia_cola
-                    }
-                }).on('success', function() {
-                    alert('Chave PIX copiada para a área de transferência')
-                })
-    
+                this.$refs.linda.select();
+                document.execCommand("copy");
+                alert('Chave PIX copiada para a área de transferência')
             }   
         }
 
@@ -52,6 +41,11 @@ import Clipboard from 'clipboard';
         padding: 5px;
         width: 100%;
         margin-top: 10px;
+    }
+    textarea{
+        text-overflow: ellipsis;
+        width: 100%;
+        resize: none;
     }
        
 </style>
